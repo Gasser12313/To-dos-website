@@ -12,7 +12,7 @@ Seif El-Din Amr Abd El-Fattah 2304205 backend,database
 ## 3. How to run (from an empty machine)
 1. Install Python 3.10+, MySQL Server and Git.
 2. Clone the repo and enter it: `git clone <url> && cd <folder>`
-open VS code then click on file select open folder and select folder db-lab2
+open VS code then click on file select open folder and select folder To-dos-website
 3. Create the environment and install packages:
 select terminal => new terminal then
    ```
