@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}To-Do{% endblock %}</title>
+  <script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('index') }}">✔ To-Do</a>
+    <div class="actions">
+      <button type="button" id="theme-toggle" class="btn small ghost" title="Switch light / dark mode" aria-label="Switch light / dark mode"></button>
+      {% if session.user_id %}
+      <form method="post" action="{{ url_for('logout') }}" class="userbox">
+        <span>Hi, {{ session.name }}</span>
+        <button class="btn small ghost">Log out</button>
+      </form>
+      {% endif %}
+    </div>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
